@@ -1,0 +1,18 @@
+# gitignore
+
+*.exe
+*.dll
+*.log
+*.db
+*.suo
+*.user
+*.sln
+*.swp
+*.*~
+
+
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+bld/
+build/
