@@ -10,9 +10,10 @@
 *.swp
 *.*~
 
-
 [Bb]in/
 [Oo]bj/
 [Oo]ut/
 bld/
 build/
+Migrations/
+
