@@ -1,6 +1,6 @@
 using System;
 
-namespace EFGetStarted.AspNetCore.NewDb.Models
+namespace Training.Models
 {
     public class ErrorViewModel
     {

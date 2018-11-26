@@ -10,10 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-using EFGetStarted.AspNetCore.NewDb.Models;
+using Training.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFGetStarted.AspNetCore.NewDb
+namespace Training
 {
     public class Startup
     {

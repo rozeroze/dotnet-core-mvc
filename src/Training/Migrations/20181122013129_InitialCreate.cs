@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EFGetStarted.AspNetCore.NewDb.Migrations
+namespace Training.Migrations
 {
     public partial class InitialCreate : Migration
     {

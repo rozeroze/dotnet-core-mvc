@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace EFGetStarted.AspNetCore.NewDb.Models
+namespace Training.Models
 {
     public class BloggingContext : DbContext
     {
@@ -31,4 +31,3 @@ namespace EFGetStarted.AspNetCore.NewDb.Models
         public Blog Blog { get; set; }
     }
 }
-

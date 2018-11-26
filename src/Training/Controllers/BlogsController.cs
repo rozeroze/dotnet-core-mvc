@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using EFGetStarted.AspNetCore.NewDb.Models;
+using Training.Models;
 
-namespace EFGetStarted.AspNetCore.NewDb.Controllers
+namespace Training.Controllers
 {
     public class BlogsController : Controller
     {

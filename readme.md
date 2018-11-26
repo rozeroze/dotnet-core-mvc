@@ -1,35 +1,48 @@
 # dotnet-core-mvc
 
-### mount error
-
-> https://qiita.com/maimai-swap/items/3caf496443773e6859fd
+### init
 
 ```sh
-[vagrant@dotnet]
+$ git clone https://github.com/rozeroze/dotnet-core-mvc.git
+$ cd dotnet-core-mvc
+$ vagrant up
+```
+
+if mount error occurred...
+
+```sh
 $ sudo yum -y update kernel
 $ sudo yum -y install kernel-devel kernel-headers dkms gcc gcc-c++
 ```
 
+and
+
 ```sh
-[host]
 $ vagrant reload
 ```
 
-### into vagrant
+### start
 
 ```sh
-[vagrant@dotnet]
-$ cd ~/src
-$ dotnet new mvc -n EFGetStarted.AspNetCore.NewDb
-$ cd EFGetStarted.AspNetCore.NewDb
-$ dotnet add package Microsoft.EntitiFrameworkCore.Sqlite
-$ vim Models/Model.cs
+$ vagrant ssh
 ```
 
-> https://docs.microsoft.com/ja-jp/ef/core/get-started/aspnetcore/new-db?tabs=netcore-cli
+```sh
+$ cd ~/src/Training
+$ dotnet run
+```
+
+open your browser -> http://192.168.55.5:8000
+
+
+### history
 
 ```sh
-[vagrant@dotnet]
+$ cd ~/src
+$ dotnet new mvc -n Training
+$ cd Training
+$ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+$ vim Models/Model.cs
 $ dotnet ef migrations add InitialCreate
 $ dotnet ef database update
 $ dotnet tool install -g dotnet-aspnet-codegenerator
@@ -38,13 +51,5 @@ $ dotnet restore
 $ dotnet aspnet-codegenerator controller -name BlogsController -m Blog -dc BloggingContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
 ```
 
-### run
-
-```sh
-[vagrant@dotnet]
-$ cd ~/src/EFGetStarted.AspNetCore.NewDb
-$ dotnet run
-```
-
-browser -> http://192.168.55.5:8000
+> https://docs.microsoft.com/ja-jp/ef/core/get-started/aspnetcore/new-db?tabs=netcore-cli
 

@@ -19,6 +19,17 @@ Vagrant.configure(2) do |config|
     rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     yum -y update
     yum -y install dotnet-sdk-2.1
+    # asp.net core package
+    cd ~/src/Training
+    dotnet add package Microsoft.EntitiFrameworkCore.Sqlite
+    dotnet tool install -g dotnet-aspnet-codegenerator
+    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+    # db migration
+    cd ~/src/Training
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+    # tools
+    yum -y install vim
   SHELL
 
 end
