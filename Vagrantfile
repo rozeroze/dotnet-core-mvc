@@ -24,10 +24,6 @@ Vagrant.configure(2) do |config|
     dotnet add package Microsoft.EntitiFrameworkCore.Sqlite
     dotnet tool install -g dotnet-aspnet-codegenerator
     dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-    # db migration
-    cd ~/src/Training
-    dotnet ef migrations add InitialCreate
-    dotnet ef database update
     # tools
     yum -y install vim
   SHELL
