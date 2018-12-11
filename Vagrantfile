@@ -24,8 +24,6 @@ Vagrant.configure(2) do |config|
     dotnet add package Microsoft.EntitiFrameworkCore.Sqlite
     dotnet tool install -g dotnet-aspnet-codegenerator
     dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-    # tools
-    yum -y install vim
   SHELL
 
 end
