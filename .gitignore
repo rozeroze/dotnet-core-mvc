@@ -17,3 +17,5 @@ bld/
 build/
 Migrations/
 
+.vagrant/
+
