@@ -61,6 +61,8 @@ $ dotnet aspnet-codegenerator controller -name BlogsController -m Blog -dc Blogg
 
 ```sh
 $ dotnet new mvc --auth Individual -n Training
+$ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.6
+$ dotnet restore
 ```
 
 > https://docs.microsoft.com/ja-jp/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&tabs=netcore-cli
