@@ -10,8 +10,8 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "./src", "/home/vagrant/src"
 
   config.vm.provider "virtualbox" do |vb|
-      vb.memory = 2048
-      vb.linked_clone = true
+    vb.memory = 2048
+    vb.linked_clone = true
   end
 
   config.vm.provision "shell", inline: <<-SHELL
