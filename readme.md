@@ -8,6 +8,12 @@ $ cd dotnet-core-mvc
 $ vagrant up
 ```
 
+if vagrant-box 'centos/7' is not found...
+
+```sh
+$ vagrant box add centos/7
+```
+
 if mount error occurred...
 
 ```sh
