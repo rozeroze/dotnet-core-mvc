@@ -72,3 +72,16 @@ $ dotnet restore
 ```
 
 > https://docs.microsoft.com/ja-jp/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&tabs=netcore-cli
+
+##### Remove 'yum update' & 'dotnet packages'
+
+```sh
+$ vagrant box update
+```
+
+'centos/7' updated to '1811.02' (2018-12-21)
+
+```sh
+$ cd ~/src
+$ sh init.sh
+```

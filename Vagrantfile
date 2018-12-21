@@ -17,13 +17,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     # asp.net core
     rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
-    yum -y update
     yum -y install dotnet-sdk-2.1
-    # asp.net core package
-    cd ~/src/Training
-    dotnet add package Microsoft.EntitiFrameworkCore.Sqlite
-    dotnet tool install -g dotnet-aspnet-codegenerator
-    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
   SHELL
 
 end
