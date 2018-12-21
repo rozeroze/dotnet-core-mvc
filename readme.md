@@ -82,6 +82,8 @@ $ vagrant box update
 'centos/7' updated to '1811.02' (2018-12-21)
 
 ```sh
+$ vagrant up
+$ vagrant ssh
 $ cd ~/src
 $ sh init.sh
 ```
