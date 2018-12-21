@@ -11,7 +11,8 @@ namespace Training.Models
         public int ProductId { get; set; }
         public int ProductCd { get; set; }
         public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        //public decimal Price { get; set; } // SQLServer ではdecimalに指定された型が存在しない
+        public int Price { get; set; }
         public UnitClass Unit { get; set; }
         public TaxClass Tax { get; set; }
         public DeleteClass Delete { get; set; }
