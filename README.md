@@ -100,7 +100,15 @@ $ sudo /opt/mssql/bin/mssql-conf setup
 
 ERROR: the installing sqlserver is neseccary least 2000 megabytes.
 
-edit Vagrantfile 'vb.memory = 2048' -> '4096' and retry it
+edit Vagrantfile 'vb.memory = 2048' -> '4096'
+
+```sh
+$ vagrant halt
+$ vagrant up
+```
+
+and after vagrant halt & up, retry it
+
 
 ```sh
 $ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo

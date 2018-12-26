@@ -34,7 +34,7 @@ namespace Training
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            /*
+            /* MEMO: If you use SQLite
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
