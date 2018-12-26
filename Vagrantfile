@@ -10,13 +10,18 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "./src", "/home/vagrant/src"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = 2048
+    vb.memory = 4096
   end
 
   config.vm.provision "shell", inline: <<-SHELL
     # asp.net core
     rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     yum -y install dotnet-sdk-2.1
+    # sqlserver
+    curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
+    yum install -y mssql-server
+    sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
+    sudo yum install -y mssql-tools unixODBC-devel
   SHELL
 
 end

@@ -98,6 +98,10 @@ $ sudo /opt/mssql/bin/mssql-conf setup
 
 - 2) Developer
 
+ERROR: the installing sqlserver is neseccary least 2000 megabytes.
+
+edit Vagrantfile 'vb.memory = 2048' -> '4096' and retry it
+
 ```sh
 $ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
 $ sudo yum install -y mssql-tools unixODBC-devel
