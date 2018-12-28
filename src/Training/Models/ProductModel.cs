@@ -17,7 +17,6 @@ namespace Training.Models
         public decimal? Price { get; set; }
         public UnitClass Unit { get; set; }
         public TaxClass Tax { get; set; }
-        public DeleteClass Delete { get; set; }
     }
 
     public enum UnitClass
@@ -30,12 +29,6 @@ namespace Training.Models
     {
         TaxIn = 0,
         TaxOut = 1
-    }
-
-    public enum DeleteClass
-    {
-        Normal = 0,
-        Delete = 1
     }
 
 }
