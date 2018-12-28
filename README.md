@@ -1,5 +1,7 @@
 # dotnet-core-mvc
 
+README, instead of LOG
+
 ### init
 
 ```sh

@@ -6,7 +6,6 @@ Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
   config.vm.network "private_network", ip: "192.168.55.5"
 
-  # yum update すると mount でエラーが出るようになる
   config.vm.synced_folder "./src", "/home/vagrant/src"
 
   config.vm.provider "virtualbox" do |vb|
