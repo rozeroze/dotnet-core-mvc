@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~/src/Training
 #dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 2.1.0
 #dotnet remove package Microsoft.EntityFrameworkCore.Sqlite
