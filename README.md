@@ -4,7 +4,7 @@ README, and instead for LOG
 
 ### init
 
-1. at first, you must prepare files.
+at first, you must prepare files.
 and go to directory
 
 ```sh
@@ -12,8 +12,8 @@ $ git clone https://github.com/rozeroze/dotnet-core-mvc.git
 $ cd dotnet-core-mvc
 ```
 
-2. `vagrant up`
- * if vagrant-box 'centos/7' is not founded, retry it after `vagrant box add`
+execute `vagrant up`.
+if vagrant-box 'centos/7' is not founded, retry it after `vagrant box add`
 
 ```sh
 $ vagrant box add centos/7
@@ -86,7 +86,7 @@ if sqlserver is inactive, activate it
 ```sh
 $ # check status
 $ systemctl status mssql-server
-$ # if inactive
+$ # if it is inactive
 $ sudo systemctl start mssql-server
 ```
 
@@ -96,7 +96,7 @@ create database in sqlserver
 $ sqlcmd -U SA -P 1cHzv6*p -i create-table.sql
 ```
 
-migration
+database migration
 
 ```sh
 $ cd ~/src/Training
