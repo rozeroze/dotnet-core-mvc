@@ -93,7 +93,7 @@ $ sudo systemctl start mssql-server
 create database in sqlserver
 
 ```sh
-$ sqlcmd -U SA -p -i create-table.sql
+$ sqlcmd -U SA -p -i create-database.sql
 Password: your-password
 ```
 
