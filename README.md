@@ -1,51 +1,119 @@
 # dotnet-core-mvc
 
-README, instead of LOG
+README, and instead for LOG
 
 ### init
+
+1. at first, you must prepare files.
+and go to directory
 
 ```sh
 $ git clone https://github.com/rozeroze/dotnet-core-mvc.git
 $ cd dotnet-core-mvc
-$ vagrant up
 ```
 
-if vagrant-box 'centos/7' is not found...
+2. `vagrant up`
+ * if vagrant-box 'centos/7' is not founded, retry it after `vagrant box add`
 
 ```sh
 $ vagrant box add centos/7
+$ vagrant up
 ```
 
-if mount error occurred...
+if mount error occurred
+
+```sh
+$ vagrant plugin install vagrant-vbguest
+$ vagrant reload
+```
+
+nevertheless mount error occurred,
+`vagrant ssh` (into vagrant) and do it(following)
 
 ```sh
 $ sudo yum -y update kernel
 $ sudo yum -y install kernel-devel kernel-headers dkms gcc gcc-c++
 ```
 
-and
-
-```sh
-$ vagrant reload
-```
+`logout` (out of vagrant) and `vagrant reload`
 
 ### start
+
+if vagrant is not created, or aborted
+
+```sh
+$ vagrant up
+```
+
+into vagrant
 
 ```sh
 $ vagrant ssh
 ```
 
+##### install dotnet packages and tools
+
+```sh
+$ cd ~/src
+$ sh dotnet-package.sh
+```
+##### sqlserver install, and it's tool
+
+```sh
+$ cd ~/src
+$ sudo /opt/mssql/bin/mssql-conf setup
+$ sh mssql-tool.sh
+$ source ~/.bashrc
+```
+
+> sqlserver-setup
+> * sqlserver-edition: `2.Developer`
+> * administrator-password: `1cHzv6*p`
+
+you can choice other edition and other password.
+at that time, you have a thing whose must do
+
+* other-edition choice
+  * license authorization
+* other-password registered
+  * you must change `Training/appsettings.json`
+  * L4: __ConnectionStrings.TrainingContext.Password__ to your-password
+
+##### database migration
+
+if sqlserver is inactive, activate it
+
+```sh
+$ # check status
+$ systemctl status mssql-server
+$ # if inactive
+$ sudo systemctl start mssql-server
+```
+
+create database in sqlserver
+
+```sh
+$ sqlcmd -U SA -P 1cHzv6*p -i create-table.sql
+```
+
+migration
+
 ```sh
 $ cd ~/src/Training
 $ dotnet ef migrations add InitialCreate
 $ dotnet ef database update
+```
+
+##### run the project
+
+```sh
+$ cd ~/src/Training
 $ dotnet run
 ```
 
 open your browser -> http://192.168.55.5:8000
 
-
-### history
+### history (instead for log)
 
 ##### Initial
 
@@ -111,7 +179,6 @@ $ vagrant up
 
 and after vagrant halt & up, retry it
 
-
 ```sh
 $ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
 $ sudo yum install -y mssql-tools unixODBC-devel
@@ -119,4 +186,3 @@ $ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 $ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 $ source ~/.bashrc
 ```
-
