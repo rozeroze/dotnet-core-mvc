@@ -93,7 +93,8 @@ $ sudo systemctl start mssql-server
 create database in sqlserver
 
 ```sh
-$ sqlcmd -U SA -P 1cHzv6*p -i create-table.sql
+$ sqlcmd -U SA -p -i create-table.sql
+Password: your-password
 ```
 
 database migration
