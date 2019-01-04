@@ -59,10 +59,11 @@ $ sh dotnet-package.sh
 ```
 ##### sqlserver install, and it's tool
 
+setup sqlserver
+
 ```sh
 $ cd ~/src
 $ sudo /opt/mssql/bin/mssql-conf setup
-$ sh mssql-tool.sh
 ```
 
 > sqlserver-setup
@@ -77,6 +78,15 @@ at that time, you have a thing whose must do
 * other-password registered
   * you must change `Training/appsettings.json`
   * L4: __ConnectionStrings.TrainingContext.Password__ to your-password
+
+install mssql-tools
+
+```sh
+$ sudo yum install -y mssql-tools
+$ sh mssql-tool.sh
+```
+
+> accept license: YES
 
 ##### database migration
 

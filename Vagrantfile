@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
     curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
     yum install -y mssql-server
     curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
-    yum install -y mssql-tools unixODBC-devel
+    yum install -y unixODBC-devel
   SHELL
 
 end
