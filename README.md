@@ -63,7 +63,6 @@ $ sh dotnet-package.sh
 $ cd ~/src
 $ sudo /opt/mssql/bin/mssql-conf setup
 $ sh mssql-tool.sh
-$ source ~/.bashrc
 ```
 
 > sqlserver-setup
