@@ -6,6 +6,7 @@
     var cookieString = consentFeature?.CreateConsentCookie();
 }
 
+@**
 @if (showBanner)
 {
     <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-top" role="alert">
@@ -37,5 +38,24 @@
                 document.querySelector("#cookieConsent").classList.add("hidden");
             }, false);
         })();
+    </script>
+}
+**@
+
+@if (true)
+{
+    <div id="cookie-consent" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p class="uk-text-lead">個人データを使用してもよろしいですか？</p>
+        <p class="uk-text-meta">広告のパーソナライズや効果測定のためにCookieを使用してデータを収集します。</p>
+        <button class="uk-button uk-button-primary">同意する</button>
+    </div>
+    <script>
+        (() => {
+            document.querySelector("#cookie-consent button").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString
+                UIkit.alert("#cookie-consent").close()
+            })
+        })()
     </script>
 }
