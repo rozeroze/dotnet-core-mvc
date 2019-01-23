@@ -84,6 +84,7 @@ install mssql-tools
 ```sh
 $ sudo yum install -y mssql-tools
 $ sh mssql-tool.sh
+$ source ~/.bashrc
 ```
 
 > accept license: YES
